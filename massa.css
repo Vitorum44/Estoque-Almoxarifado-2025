@@ -1,0 +1,345 @@
+/* styles.css */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "instrument Sans", sans-serif;
+}
+
+/* Estilização geral do corpo */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    /* Aumenta a legibilidade */
+    text-align: center;
+}
+
+/* Cabeçalho fixo e responsivo */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 215px;
+    /* Tamanho inicial ajustado */
+    background: #8d8d8d;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: height 0.5s ease-in-out;
+    /* Suaviza alterações no tamanho */
+}
+
+.menu {
+    display: flex;
+    /* Mostra o menu inicialmente */
+    transition: opacity 0.3s ease;
+    /* Suaviza o desaparecimento */
+}
+
+.menu.hide {
+    opacity: 0;
+    /* Torna o menu invisível */
+    pointer-events: none;
+    /* Remove interatividade enquanto oculto */
+}
+
+/* Estilização da logo */
+.logo img {
+    width: 200px;
+    /* Ajusta para um tamanho menor */
+    height: auto;
+    object-fit: contain;
+    /* Garante que a logo se ajuste sem cortar partes */
+    transition: width 0.3s ease, height 0.3s ease;
+    /* Suaviza alterações no tamanho */
+    margin-top: 25px;
+}
+
+/* Ícone do usuário */
+.user-icon {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    /* Ícone fixado no canto superior direito */
+    transition: display 0.3s ease;
+}
+
+.user-icon img {
+    height: 40px;
+    /* Ajuste o tamanho do ícone */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Estilização do menu */
+.menu {
+    display: flex;
+    /* Menu visível por padrão */
+    margin-top: 10px;
+    transition: display 0.3s ease;
+    font-size: 14px;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    color: #ff9800;
+}
+
+/* Ícone do usuário */
+.user-icon img {
+    height: 47px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.user-icon img:hover {
+    height: 58px;
+}
+
+/* Botão de Logout */
+.logout-button {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    /* Gradiente vibrante */
+    padding: 10px 20px;
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    /* Sombra para dar destaque */
+    text-align: center;
+    z-index: 1000;
+    font-size: 16px;
+    /* Texto maior */
+    font-weight: bold;
+    color: white;
+    /* Texto em branco */
+    cursor: pointer;
+    /* Indica que é clicável */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    /* Animações suaves */
+}
+
+.logout-button.show {
+    display: block;
+}
+
+.logout-button:hover {
+    transform: scale(1.05);
+    /* Leve aumento ao passar o mouse */
+    opacity: 0.9;
+    /* Transparência reduzida */
+}
+
+.logout-button a {
+    text-decoration: none;
+    /* Remove sublinhado */
+    color: white;
+    /* Mantém o texto branco */
+}
+.container {
+    max-width: 1000px;
+    margin: 220px auto 0 auto; /* Centraliza no eixo horizontal */
+    padding: 0 20px; /* Espaço interno lateral opcional */
+    text-align: center;
+}
+
+
+/* Layout de grade para exibição de massas */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-content: center; /* Centraliza o grid dentro do container */
+    margin-top: 20px;
+}
+
+
+/* Estilização dos itens de massa */
+.massa-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    max-width: 350px;
+}
+
+.massa-item img {
+    width: 198px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 33px;
+}
+
+.info {
+    text-align: left;
+    width: 100%;
+}
+
+.info p {
+    margin: 5px 0;
+}
+
+/* Botões de ação */
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn {
+    background-color: #ffcc00;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+.delete-btn {
+    background-color: #ff4444;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 16px;
+    color: white;
+}
+
+/* Botão de impressão */
+.btn-print {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.btn-print:hover {
+    background-color: #0056b3;
+}
+
+.btn-primary {
+    background-color: #28a745; /* Verde vibrante */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #218838; /* Tom mais escuro no hover */
+}
+
+
+
+/* Estilizando o formulário */
+.form-card {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Estilizando os campos */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.alerta-vencimento {
+  background-color: #fff3cd;
+  border-left: 6px solid #ffc107;
+}
+
+.vencido {
+  background-color: #f8d7da;
+  border-left: 6px solid #dc3545;
+}
+
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .massa-item {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .main-header {
+        height: auto;
+        padding: 20px;
+    }
+
+    .logo img {
+        width: 150px;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .user-icon img {
+        height: 40px;
+    }
+
+    .logout-button {
+        top: 50px;
+        right: 10px;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
