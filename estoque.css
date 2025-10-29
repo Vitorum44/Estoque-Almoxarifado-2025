@@ -1666,17 +1666,12 @@ button {
 
 /* Sidebar off-canvas no mobile */
 @media (max-width: 768px){
-  .mobile-header{ display: flex; }
-
-  /* empurra conteúdo para baixo do header */
-  .main-content{ padding-top: 12px; }
-
-  /* sidebar vira off-canvas */
   .sidebar{
-    position: fixed; inset: 0 auto 0 0; height: 100vh;
-    transform: translateX(-100%);
-    transition: transform .25s ease;
-    z-index: 950;
+    position: fixed; left:0; top:56px;
+    /* ... (outros estilos) ... */
+    transform: translateX(-105%); /* Esconde o menu */
+    transition: transform .28s ease;
+    z-index: 1110;
   }
   body.sidebar-open .sidebar{ transform: translateX(0); }
   body.sidebar-open .sidebar-overlay{ opacity:1; visibility:visible; }
