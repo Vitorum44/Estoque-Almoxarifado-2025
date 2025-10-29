@@ -1,0 +1,25 @@
+{
+  "name": "controle-de-material",
+  "version": "1.0.0",
+  "description": "Sistema de Controle de Material e Almoxarifado integrado com Firebase e Capacitor",
+  "author": "Vitor Emanuel da Silva",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "npx http-server ./www -p 8080",
+    "dev": "npx http-server ./www -p 8080 --cors",
+    "build": "echo 'Nenhum build necessário — arquivos estáticos já em /www'",
+    "sync": "npx cap sync",
+    "android": "npx cap open android",
+    "clean": "rimraf node_modules && npm install"
+  },
+  "dependencies": {
+    "@capacitor/core": "7.4.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "7.4.3",
+    "@capacitor/android": "7.4.3",
+    "http-server": "^14.1.1",
+    "rimraf": "^5.0.0"
+  }
+}
